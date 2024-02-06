@@ -1,0 +1,21 @@
+$ git commit -a -m "message"
+doesn't need add anymore and skips staging area only if no new file was created
+if thre is no new files you can use this for skipping
+
+$ git log -p
+shows all the changes as well as logging
+
+$ git show [commit hash]
+shows the commit
+
+$ git diff
+show the differenece from the last commit
+
+$ git diff --staged
+shows difference of last staged from last commit
+
+$ git rm [file name]
+removes from staging and ttracking
+
+$ git mv [file name] [file name]
+copies file
