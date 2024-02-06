@@ -1,0 +1,30 @@
+What characteristics make Git particularly powerful? Check all that apply.
+
+
+It was created by Linus Torvalds in 2005.
+
+This should not be selected
+Not quite. While it's true that Git was originally developed by Linus Torvalds, the power of Git lies in how it's a distributed version control system that can be used by as many developers as needed.
+
+
+It's a distributed VCS, which means that each developer has a full copy of the repository.
+
+Correct
+You nailed it! Because each contributor to a Git repo has a full copy of the repository, they can interact with the tracked files without needing a coordinating server. In turn, this improves collaboration.
+
+
+It's maintained by a team of distributed developers.
+
+This should not be selected
+Not quite. While it’s true that Git is maintained by a team of many developers distributed around the world, the power of Git lies in how it's a distributed version control system that can be used by as many developers as needed.
+
+
+Repositories can be used by as many developers as needed.
+
+Correct
+Right on! Because of the way Git was designed, repositories can be useful for any number of developers, from one to thousands.
+
+------------------------------------------
+
+$ git --version
+git version 2.34.1
