@@ -1,0 +1,37 @@
+$ diff sep1.txt sep2.txt
+2c2
+< this is a text
+---
+> this is another text
+
+$ diff sep1.txt sep2.txt
+2c2
+< this is a text
+---
+> this is another text
+5c5   #<--- this shows the line numbers in both files
+< but this line is a little different
+\ No newline at end of file
+---
+> but this line is different
+\ No newline at end of file
+
+$ diff -u sep1.txt sep2.txt    #another format
+--- sep1.txt    2024-02-06 08:10:09.893190500 +0330
++++ sep2.txt    2024-02-06 08:09:53.419924400 +0330
+@@ -1,5 +1,5 @@
+ hi
+-this is a text
++this is another text
+ from sepehr
+ now this line is added to both
+-but this line is a little different
+\ No newline at end of file
++but this line is different
+\ No newline at end of file
+
+$ diff -u sep1.txt sep2.txt > change2.diff
+#writes changes to another file
+
+$ patch sep1toSep2ByDiff.txt < change2.diff
+apply changes to the file

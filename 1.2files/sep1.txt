@@ -1,0 +1,5 @@
+hi
+this is a text
+from sepehr
+now this line is added to both
+but this line is a little different
