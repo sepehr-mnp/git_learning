@@ -63,3 +63,26 @@ core.logallrefupdates=true
 core.ignorecase=true
 
 # the sammery that you write for the commit message can be up to 50 chars but the following part  can be as long as you want
+
+$ git log
+commit 752bb2ecda2f195908222da0abeaf58ebe36e52a (HEAD -> master)
+Author: sepehr-mnp <sepehr.mirnasrollahi@aut.ac.ir>
+Date:   Tue Feb 6 09:36:11 2024 +0330
+
+    hi this is summery
+
+    all these are more informations and they will be stored
+    for this commit but i think github will only show the first line in front of the file name!
+    hi
+
+commit c016001eede97f67dc658558202d1fc37e79a247
+Author: sepehr-mnp <sepehr.mirnasrollahi@aut.ac.ir>
+Date:   Tue Feb 6 09:27:23 2024 +0330
+
+    added new line
+
+commit 6fe46424ad0cd9273d63c66fac597acf50a92cfa
+Author: sepehr-mnp <sepehr.mirnasrollahi@aut.ac.ir>
+Date:   Tue Feb 6 09:17:06 2024 +0330
+
+    added this file by sepmn
