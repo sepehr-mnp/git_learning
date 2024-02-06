@@ -1,0 +1,65 @@
+What are the git directory and the working tree?
+
+
+The git directory stores configuration settings and the working tree stores the history of the files.
+
+
+The git directory is copied to the computer and the working tree stays in the remote repository.
+
+
+The git directory is a sandbox for changing the files and the working tree contains old versions of the files.
+
+
+correct -> The git directory contains all the changes and their history and the working tree contains the current versions of the files.
+
+--------------
+first we modify #modified
+
+$ git add .  #stage
+
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   sep.txt
+
+$ git commit #snapshot
+[master (root-commit) 6fe4642] added this file by sepmn
+ 1 file changed, 1 insertion(+)
+ create mode 100644 sep.txt
+
+#added line
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sep.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")	
+
+$ git add .
+sepehr@DESKTOP-VAABNLN:/mnt/c/Users/ASUS/Downloads/git/git_learning/1.4git2/checks$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   sep.txt
+
+$  git commit -m "added new line"
+[master c016001] added new line
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+$ git config -l
+user.email=sepehr.mirnasrollahi@aut.ac.ir
+user.name=sepehr-mnp
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+
+# the sammery that you write for the commit message can be up to 50 chars but the following part  can be as long as you want
