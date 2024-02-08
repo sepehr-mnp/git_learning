@@ -1,0 +1,46 @@
+$ git branch 
+shows branches(there should be atleast one commit)
+
+$ git branch new_feature
+creates new branch called new_feature
+
+$ git checkout new_feature
+Switched to branch 'new_feature'
+
+$ git checkout -b new_feature
+creates and switch to branch 'new_feature'
+
+$ git branch -d branch_name
+deletes branch
+
+$ git merge branch_name
+merges the branch_name into current branch
+now two branches point to same head:
+	$ git merge new_feature
+	Updating 441d510..e068b5b
+	Fast-forward
+ 	sep.txt | 2 +-
+	1 file changed, 1 insertion(+), 1 deletion(-)
+
+	$ git log
+	commit e068b5be2ccff613c0ddf265f05d7bd6a313f4cc (HEAD -> master, new_feature)
+	Author: sepehr-mnp <sepehr.mirnasrollahi@aut.ac.ir>
+	Date:   Thu Feb 8 13:16:10 2024 +0330
+
+    		second commit but only on branch new feature
+
+	commit 441d510ad95ed74aedb71c6a1c652e390b41c125
+	Author: sepehr-mnp <sepehr.mirnasrollahi@aut.ac.ir>
+	Date:   Thu Feb 8 13:13:24 2024 +0330
+
+    		initial
+	
+	# git log of both branches are the same because there was no commiting on the master branches while we were commiting on new_feature branch
+#conflicts happens if both branches that are mergin, has same file edited
+
+# for conflicts, resolve them, then:
+	$ git add .
+	$ git commit
+
+$ git log --graph --oneline
+shows branches in form  of graph
