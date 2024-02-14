@@ -1,0 +1,110 @@
+after fixing conflict, use: 
+$ git add
+$ git commit
+$ git push
+
+
+you can create a branch locally, commit some and then push the branch to remote repository:
+$  git checkout -b refactorS
+Switched to a new branch 'refactorS'
+$ git commit -am "added third comment"
+[refactorS 93707f6] added third comment
+ 1 file changed, 2 insertions(+)
+$ git commit -am "added third comment 2"
+[refactorS 53f8687] added third comment 2
+ 1 file changed, 1 insertion(+)
+$ git commit -am "added third comment  3"
+[refactorS ea84c34] added third comment  3
+ 1 file changed, 1 insertion(+)
+$  git push -u origin refactorS
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 813 bytes | 813.00 KiB/s, done.
+Total 9 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'refactorS' on GitHub by visiting:
+remote:      https://github.com/sepehr-mnp/serkleTrie/pull/new/refactorS
+remote:
+To https://github.com/sepehr-mnp/serkleTrie.git
+ * [new branch]      refactorS -> refactorS
+branch 'refactorS' set up to track 'origin/refactorS'.
+
+# as you saw, we can have multiple commits before pushing to branch
+
+
+git rebase lets you to change the base commit of a branch
+so when your master is ahead, you rebase and then the reoot of the forked branch comes to head of master
+like in here:
+git log --graph --oneline --all
+* 31ea64e (HEAD -> main) added new comment in ptr.go
+| * ea84c34 (origin/refactorS, refactorS) added third comment  3
+| * 53f8687 added third comment 2
+| * 93707f6 added third comment
+|/
+* 2b06c40 (origin/main, origin/HEAD) added third comment
+* d5d2314 added second comment
+* fc4e28d added first comment
+* 480c03b added first comment
+* 76d13a6 Update ptr.go
+* 4aa52d1 Update trie.go
+* 9725393 Add files via upload
+* e68ae9a Initial commit
+$ git chackout refactorS
+$ git rebase main
+Successfully rebased and updated refs/heads/refactorS.
+$ git log --graph --oneline --all
+* ad26454 (HEAD -> refactorS) added third comment  3
+* 952838d added third comment 2
+* 468b37d added third comment
+* 31ea64e (main) added new comment in ptr.go
+| * ea84c34 (origin/refactorS) added third comment  3
+| * 53f8687 added third comment 2
+| * 93707f6 added third comment
+|/
+* 2b06c40 (origin/main, origin/HEAD) added third comment
+* d5d2314 added second comment
+* fc4e28d added first comment
+* 480c03b added first comment
+* 76d13a6 Update ptr.go
+* 4aa52d1 Update trie.go
+* 9725393 Add files via upload
+* e68ae9a Initial commit
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+$ git merge refactorS
+Updating 31ea64e..ad26454
+Fast-forward
+ trie.go | 4 ++++
+ 1 file changed, 4 insertions(+)
+$ git push
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (12/12), 1.10 KiB | 1.10 MiB/s, done.
+Total 12 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 2 local objects.
+To https://github.com/sepehr-mnp/serkleTrie.git
+   2b06c40..ad26454  main -> main
+
+
+
+
+one way:
+first fetch from remote repo
+rebase to origin/master
+push
+
+# ! no merge needed! only for branches like previous
+
+best parctice:
+1 - always be updated to minimize chance of conflict
+2 - avoid having very large changes that modify a lot of different things. Instead, try to make changes as small as possible as long as they're self-contained. For example, if you are renaming a variable for clarity reasons, you don't want to have code that adds new functionality in the same commit. It's better if you split it into different commit. This makes it easier to understand what's going on with each commit.
+On top of that, if you remember to push your changes often and pull before doing any work, you reduce the chances of getting conflict.s
+3 - If you need to maintain more than one version of a project at the same time, it's common practice to have the latest version of the project in the master branch and a stable version of the project on a separate branch.
+You'll merge your changes into the separate branch whenever you declare a stable release. 
