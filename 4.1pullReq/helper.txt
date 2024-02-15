@@ -1,0 +1,11 @@
+When collaborating on projects hosted on GitHub, the typical workflows, first, create a fork of the repo, and then work on that local fork. A forked repo is just like a normal repo, except Github knows which repo it forked from. So we can eventually merge our changes back into the main repo by creating a pull request. A pull request is a commit or series of commits that you send to the owner of the repository so that they incorporate it into their tree. 
+it is kina like branching but the owner is us now! and pull request is like merging
+all of this is handled in github.com and not terminal
+
+if we commit to the same branch again before the pull request is accepted, it will automatically show up in the pull request 
+
+$ git rebase -i master
+in the editor, instead of pick for second commir, can write squash, which uses commit but meld into previous one
+
+
+after two screen shots, the pull request commits(that were two) will become one
