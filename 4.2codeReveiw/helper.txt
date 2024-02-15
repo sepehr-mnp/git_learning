@@ -1,0 +1,2 @@
+when you rebase your commits, you cannot push them to yopur remote git if you already commited some of them there, so you should force them by 
+$ git push -f
