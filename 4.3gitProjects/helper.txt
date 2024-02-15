@@ -1,0 +1,7 @@
+This issue seems easy enough to fix, we need to update the README file to use the new file name and explain a bit more about how our script works. Before we start working on this, let's get the issue assigned to us.
+Assigning issues to collaborators helps us track who is working on what. By assigning the bug to yourself, you can let others know that you're working on it, so they don't need to. All right, let's update the documentation.
+
+We'll say that we've updated the README to use the new name of our script. And in a longer description, we'll add that we've included more info about how the script works. Finally, we'll wrap up by adding the string closes #1, so that the issue will get automatically closed once this commit is integrated into the main tree.
+
+
+ GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform available through GitHub.
